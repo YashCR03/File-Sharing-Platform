@@ -1,0 +1,50 @@
+{
+  "name": "ezshare",
+  "version": "1.10.3",
+  "description": "Easily share files over LAN",
+  "main": "index.js",
+  "repository": "https://github.com/mifi/ezshare",
+  "author": "Mikael Finstad <finstaden@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
+  "bin": "index.js",
+  "scripts": {
+    "test": "exit 0",
+    "build": "cd ezshare-frontend && npm run build",
+    "prepack": "npm run build",
+    "start": "concurrently -k \"cd ezshare-frontend && yarn start\" \"node . --dev-mode\""
+  },
+  "files": [
+    "/ezshare-frontend/dist/**",
+    "app.js"
+  ],
+  "pkg": {
+    "assets": [
+      "ezshare-frontend/dist/**"
+    ]
+  },
+  "dependencies": {
+    "archiver": "^3.1.1",
+    "body-parser": "^1.19.0",
+    "clipboardy": "^2.3.0",
+    "content-disposition": "^0.5.3",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "filenamify": "^4.2.0",
+    "formidable": "^1.2.2",
+    "fs-extra": "^8.1.0",
+    "http-proxy-middleware": "^1.0.3",
+    "lodash": "^4.17.15",
+    "meow": "^6.1.0",
+    "morgan": "^1.9.1",
+    "p-map": "^4.0.0",
+    "qrcode-terminal": "^0.12.0",
+    "range-parser": "^1.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "packageManager": "yarn@4.1.1"
+}
